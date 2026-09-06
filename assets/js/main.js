@@ -12,6 +12,29 @@
     onScroll();
   }
 
+  /* Theme */
+  const themeRoot = document.documentElement;
+  const themeButtons = document.querySelectorAll("[data-theme-toggle]");
+  const applyTheme = (theme) => {
+    themeRoot.setAttribute("data-theme", theme);
+    try {
+      localStorage.setItem("halden-theme", theme);
+    } catch (e) {
+      /* ignore */
+    }
+    const dark = theme === "dark";
+    themeButtons.forEach((btn) => {
+      btn.setAttribute("aria-pressed", String(dark));
+      btn.setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme");
+    });
+  };
+  applyTheme(themeRoot.getAttribute("data-theme") || "light");
+  themeButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      applyTheme(themeRoot.getAttribute("data-theme") === "dark" ? "light" : "dark");
+    });
+  });
+
   /* Mobile nav */
   const menuBtn = document.querySelector("[data-menu]");
   const mobileNav = document.getElementById("mobile-nav");
