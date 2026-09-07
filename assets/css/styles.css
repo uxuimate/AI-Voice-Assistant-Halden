@@ -273,9 +273,9 @@ p {
   z-index: 60;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 1rem;
   height: 64px;
-  padding: 0 0.85rem 0 1.15rem;
+  padding: 0 0.75rem 0 1.1rem;
   background: var(--nav-bg);
   backdrop-filter: blur(22px) saturate(1.2);
   -webkit-backdrop-filter: blur(22px) saturate(1.2);
@@ -299,13 +299,15 @@ p {
   .nav {
     left: 24px;
     right: 24px;
-    padding: 0 1rem 0 1.4rem;
+    gap: 1.35rem;
+    padding: 0 0.85rem 0 1.35rem;
   }
 }
 
 .logo {
   display: inline-flex;
   align-items: center;
+  flex: 0 0 auto;
   gap: 0.55rem;
   font-size: 1.15rem;
   font-weight: 500;
@@ -322,21 +324,34 @@ p {
 
 .nav-links {
   display: none;
-  gap: 0.95rem;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem;
+  min-width: 0;
 }
 
-@media (min-width: 1140px) {
+@media (min-width: 1220px) {
   .nav-links {
     display: flex;
   }
 }
 
 .nav-links a {
+  flex: 0 0 auto;
+  padding: 0.4rem 0.85rem;
   color: var(--muted);
   font-size: 0.9rem;
   font-weight: 400;
+  white-space: nowrap;
   cursor: pointer;
   transition: color var(--ease);
+}
+
+@media (min-width: 1400px) {
+  .nav-links a {
+    padding: 0.4rem 1.1rem;
+  }
 }
 
 .nav-links a:hover {
@@ -346,7 +361,8 @@ p {
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 0.45rem;
+  flex: 0 0 auto;
+  gap: 0.7rem;
 }
 
 .theme-toggle {
@@ -397,7 +413,7 @@ html[data-theme="dark"] .theme-toggle .icon-sun {
   box-shadow: var(--neu-press);
 }
 
-@media (min-width: 1140px) {
+@media (min-width: 1220px) {
   .menu-btn {
     display: none;
   }
@@ -1234,54 +1250,53 @@ html[data-theme="dark"] .voice-chip:focus-visible {
   min-height: 15.5rem;
 }
 
-.photo-band,
-.photo-card {
-  overflow: hidden;
-  padding: 0;
+#problem.section,
+#testimonials.section {
+  padding-bottom: 0;
 }
 
 .photo-band {
-  margin-top: 1.5rem;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  overflow: hidden;
+  background: #161410;
 }
 
 .photo-band img {
   width: 100%;
-  height: min(26rem, 50vw);
-  object-fit: cover;
-  filter: saturate(0.78) contrast(1.04);
-  transform: scale(1.05);
-  transition: transform 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+  height: auto;
+  display: block;
 }
 
-.card.is-shown .photo-band img,
-.photo-band.card.is-shown img,
-.photo-card.card.is-shown img {
-  transform: scale(1);
+#how .photo-band {
+  margin-top: 0.25rem;
+  margin-bottom: 2.5rem;
 }
 
-.how-intro {
-  display: grid;
-  gap: 1.5rem;
-  margin-bottom: 1.75rem;
+#testimonials .photo-band {
+  margin-top: 2.75rem;
 }
 
-@media (min-width: 900px) {
-  .how-intro {
-    grid-template-columns: 1fr 0.72fr;
-    gap: 2.5rem;
-    align-items: end;
-    margin-bottom: 2rem;
+@media (min-width: 800px) {
+  .photo-band {
+    width: min(var(--max), calc(100% - 5rem));
+    margin: 2.75rem auto 0;
+    border-radius: var(--r);
+    box-shadow: var(--neu);
+  }
+
+  #how .photo-band {
+    margin-top: 0.15rem;
+    margin-bottom: 2.75rem;
+  }
+
+  #testimonials .photo-band {
+    margin-top: 3rem;
   }
 }
 
-.photo-card img {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: center 18%;
-  filter: saturate(0.78) contrast(1.04);
-  transform: scale(1.05);
-  transition: transform 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+.how-intro {
+  margin-bottom: 1.5rem;
 }
 
 .issues span,
@@ -1312,9 +1327,35 @@ html[data-theme="dark"] .voice-chip:focus-visible {
   max-width: 28ch;
 }
 
-/* Owners */
-#owners h2 {
+/* Testimonials */
+#testimonials h2 {
   max-width: 16ch;
+}
+
+.quote-faces {
+  display: flex;
+  align-items: center;
+  margin: 0 0 1.75rem;
+}
+
+.quote-faces img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: var(--neu-sm);
+  margin-left: -0.7rem;
+}
+
+.quote-faces img:first-child {
+  margin-left: 0;
+}
+
+@media (min-width: 720px) {
+  .quote-faces img {
+    width: 56px;
+    height: 56px;
+  }
 }
 
 .quotes {
@@ -1358,12 +1399,19 @@ html[data-theme="dark"] .voice-chip:focus-visible {
 }
 
 .quote img {
-  width: 52px;
-  height: 52px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
   box-shadow: var(--neu-sm);
+}
+
+@media (min-width: 720px) {
+  .quote img {
+    width: 52px;
+    height: 52px;
+  }
 }
 
 .quote-who b {

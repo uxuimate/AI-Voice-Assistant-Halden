@@ -188,11 +188,11 @@
       doneLead: "If the line is busy on your side, check email. No deck attached.",
     },
     walk: {
-      kicker: "Book a walkthrough",
-      title: "Fifteen minutes. One hard call.",
-      lead: "No deck. We walk through the call you are afraid a machine would get wrong.",
-      submit: "Book the walkthrough",
-      doneTitle: "Walkthrough booked. We’ll send a time today.",
+      kicker: "Book a short call",
+      title: "Fifteen minutes. One difficult call.",
+      lead: "No deck. We talk through the call you are afraid a machine would get wrong.",
+      submit: "Book the call",
+      doneTitle: "Received. We’ll send a time today.",
       doneLead: "Fifteen minutes. No pitch deck. Check email if we miss you.",
     },
   };
@@ -291,12 +291,12 @@
     const lead = document.getElementById("start-lead");
     const submit = document.getElementById("start-submit");
     const field = document.getElementById("intent");
-    if (kicker) kicker.textContent = "Book a walkthrough";
-    if (title) title.textContent = "Fifteen minutes. One hard call.";
-    if (lead) lead.textContent = "No deck. We walk through the call you are afraid a machine would get wrong.";
-    if (submit) submit.textContent = "Book the walkthrough";
+    if (kicker) kicker.textContent = "Book a short call";
+    if (title) title.textContent = "Fifteen minutes. One difficult call.";
+    if (lead) lead.textContent = "No deck. We talk through the call you are afraid a machine would get wrong.";
+    if (submit) submit.textContent = "Book the call";
     if (field) field.value = "walk";
-    document.title = "Book a walkthrough — Halden";
+    document.title = "Book a short call — Halden";
     const switcher = document.getElementById("start-switch");
     if (switcher) switcher.innerHTML = 'Ready this afternoon? <a href="start.html">Get Halden</a>.';
   }
@@ -423,8 +423,8 @@
       trust: {
         href: "#trust",
         ask: [
-          { text: "What happens on " },
-          { text: "a hard call", highlight: true },
+          { text: "What happens " },
+          { text: "if a call goes wrong", highlight: true },
           { text: "?" },
         ],
         reply: [
