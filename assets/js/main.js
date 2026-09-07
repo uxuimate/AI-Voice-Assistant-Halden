@@ -446,6 +446,19 @@
           { text: "." },
         ],
       },
+      reviews: {
+        href: "#testimonials",
+        ask: [
+          { text: "What do " },
+          { text: "other owners say", highlight: true },
+          { text: "?" },
+        ],
+        reply: [
+          { text: "They were not buying another bot. " },
+          { text: "They were buying the hard call", highlight: true },
+          { text: "." },
+        ],
+      },
       proof: {
         href: "#proof",
         ask: [
@@ -456,6 +469,19 @@
         reply: [
           { text: "2,400+ businesses already on Halden. " },
           { text: "See what the calls are worth", highlight: true },
+          { text: "." },
+        ],
+      },
+      faq: {
+        href: "#faq",
+        ask: [
+          { text: "What do people " },
+          { text: "usually ask", highlight: true },
+          { text: "?" },
+        ],
+        reply: [
+          { text: "The hard ones: a wrong answer, a new number, " },
+          { text: "and how soon it can be live", highlight: true },
           { text: "." },
         ],
       },

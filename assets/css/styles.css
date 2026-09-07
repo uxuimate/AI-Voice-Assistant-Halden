@@ -695,83 +695,111 @@ html[data-theme="dark"] .theme-toggle .icon-sun {
 }
 
 .voice-wave {
-  width: min(100%, 22rem);
-  height: clamp(2.4rem, 6vh, 4.6rem);
-  flex-shrink: 1;
-  opacity: 0.38;
-  transform: scaleY(0.55);
+  width: calc(100% + clamp(1.2rem, 4vw, 3.4rem));
+  max-width: none;
+  height: clamp(5.8rem, 16vh, 9.5rem);
+  margin-inline: calc(clamp(0.6rem, 2vw, 1.7rem) * -1);
+  flex-shrink: 0;
+  opacity: 0.78;
+  overflow: hidden;
   transform-origin: center;
-  transition: opacity 420ms ease, transform 420ms ease;
+  transition: opacity 420ms ease;
 }
 
 .voice-wave svg {
   width: 100%;
   height: 100%;
+  display: block;
   overflow: visible;
 }
 
 .voice-wave path {
   fill: none;
   stroke: url(#voiceWaveGrad);
-  stroke-width: 1.35;
+  stroke-width: 2.1;
   stroke-linecap: round;
-  opacity: 0.7;
+  opacity: 0.78;
+  transform-box: fill-box;
+  transform-origin: center;
 }
 
 .voice-wave path:nth-child(2) {
-  stroke-width: 1.1;
-  opacity: 0.5;
+  stroke-width: 1.55;
+  opacity: 0.52;
 }
 
 .voice-wave path:nth-child(3) {
-  stroke-width: 1.6;
-  opacity: 0.85;
+  stroke-width: 2.45;
+  opacity: 0.92;
 }
 
 .voice-wave path:nth-child(4) {
-  stroke-width: 0.9;
-  opacity: 0.4;
+  stroke-width: 1.25;
+  opacity: 0.42;
+}
+
+.voice-wave-group {
+  animation: voice-slide 9s linear infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.voice-wave path:nth-child(1) {
+  animation: voice-pulse 3.4s ease-in-out infinite;
+}
+
+.voice-wave path:nth-child(2) {
+  animation: voice-pulse 4.2s ease-in-out infinite reverse;
+}
+
+.voice-wave path:nth-child(3) {
+  animation: voice-pulse 2.8s ease-in-out infinite 0.15s;
+}
+
+.voice-wave path:nth-child(4) {
+  animation: voice-pulse 3.8s ease-in-out infinite reverse 0.3s;
 }
 
 .voice-stage.is-listening .voice-wave {
   opacity: 1;
-  transform: scaleY(1);
 }
 
 .voice-stage.is-listening .voice-wave-group {
-  animation: voice-flow 1.35s ease-in-out infinite;
-  transform-origin: center;
+  animation-duration: 3.2s;
 }
 
 .voice-stage.is-listening .voice-wave path:nth-child(1) {
-  animation: voice-drift 1.8s ease-in-out infinite;
+  animation-duration: 1.35s;
 }
 
 .voice-stage.is-listening .voice-wave path:nth-child(2) {
-  animation: voice-drift 2.2s ease-in-out infinite reverse;
+  animation-duration: 1.7s;
 }
 
 .voice-stage.is-listening .voice-wave path:nth-child(3) {
-  animation: voice-drift 1.5s ease-in-out infinite 0.2s;
+  animation-duration: 1.15s;
 }
 
-@keyframes voice-flow {
-  0%,
-  100% {
-    transform: scaleY(0.88) translateX(0);
+.voice-stage.is-listening .voice-wave path:nth-child(4) {
+  animation-duration: 1.55s;
+}
+
+@keyframes voice-slide {
+  from {
+    transform: translateX(0);
   }
-  50% {
-    transform: scaleY(1.12) translateX(-6px);
+  to {
+    transform: translateX(-50%);
   }
 }
 
-@keyframes voice-drift {
+@keyframes voice-pulse {
   0%,
   100% {
-    transform: translateY(0);
+    transform: scaleY(0.82) translateY(0);
   }
   50% {
-    transform: translateY(-4px);
+    transform: scaleY(1.22) translateY(-6px);
   }
 }
 
@@ -845,7 +873,7 @@ html[data-theme="dark"] .voice-mic {
 }
 
 html[data-theme="dark"] .voice-stage:not(.is-listening) .voice-wave {
-  opacity: 0.72;
+  opacity: 0.88;
 }
 
 html[data-theme="dark"] .voice-chip {
