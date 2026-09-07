@@ -414,7 +414,7 @@
       if (!target) return;
       target.replaceChildren();
       parts.forEach((part) => {
-        const node = document.createElement(part.highlight ? "mark" : "span");
+        const node = document.createElement("span");
         if (part.highlight) node.className = "voice-mark";
         node.textContent = part.text;
         target.appendChild(node);
@@ -429,7 +429,7 @@
         return;
       }
       for (const part of parts) {
-        const node = document.createElement(part.highlight ? "mark" : "span");
+        const node = document.createElement("span");
         if (part.highlight) node.className = "voice-mark";
         target.appendChild(node);
         for (const ch of part.text) {

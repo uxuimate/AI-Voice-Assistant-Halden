@@ -587,12 +587,12 @@ html[data-theme="dark"] .theme-toggle .icon-sun {
 
 .voice-mark {
   display: inline;
-  padding: 0.12em 0.32em;
+  padding: 0.08em 0.3em;
   margin: 0 0.04em;
   border-radius: 8px;
-  color: inherit;
-  background: rgba(28, 26, 22, 0.055);
-  box-shadow: var(--neu-in);
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+  box-shadow: none;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
@@ -814,9 +814,8 @@ html[data-theme="dark"] .voice-reply {
 }
 
 html[data-theme="dark"] .voice-mark {
-  color: #fff8ee;
-  background: rgba(240, 160, 74, 0.22);
-  box-shadow: inset 0 0 0 1px rgba(240, 160, 74, 0.28);
+  color: #ffc56d;
+  background: rgba(240, 160, 74, 0.2);
 }
 
 html[data-theme="dark"] .voice-mic {
