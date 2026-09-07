@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms and conditions — Halden</title>
+    <meta
+      name="description"
+      content="Example terms and conditions for the Halden design demonstration by Aleksandar Kehayov (UX UI MATE). Effective 2026."
+    />
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("halden-theme");
+          var theme =
+            stored === "dark" || stored === "light"
+              ? stored
+              : window.matchMedia("(prefers-color-scheme: dark)").matches
+                ? "dark"
+                : "light";
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <noscript><style>[data-in],.card[data-reveal]{opacity:1;transform:none}</style></noscript>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%231C1A16' stroke-width='2.2'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%231C1A16'/%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <a class="logo" href="index.html" aria-label="Halden home">
+        <svg class="logo-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="2.2" />
+          <circle cx="16" cy="16" r="4" fill="currentColor" />
+        </svg>
+        Halden
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="index.html#how">How it works</a>
+        <a href="index.html#trust">If it goes wrong</a>
+        <a href="index.html#testimonials">Reviews</a>
+        <a href="index.html#proof">Proof</a>
+        <a href="index.html#pricing">Price</a>
+        <a href="index.html#faq">Questions</a>
+        <a href="index.html#act">Write to us</a>
+      </nav>
+      <div class="nav-right">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Switch to dark theme">
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+            <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4 7 7 0 0 0 20 14.5z" />
+          </svg>
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4 7 17M17 7l1.4-1.4" />
+          </svg>
+        </button>
+        <a class="btn btn-secondary nav-cta" href="index.html">Back</a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav" data-menu>
+          <span class="sr-only">Menu</span>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="mobile-nav" id="mobile-nav" hidden>
+      <a href="index.html">Home</a>
+      <a href="index.html#how">How it works</a>
+      <a href="index.html#trust">If it goes wrong</a>
+      <a href="index.html#testimonials">Reviews</a>
+      <a href="index.html#proof">Proof</a>
+      <a href="index.html#pricing">Price</a>
+      <a href="index.html#faq">Questions</a>
+      <a href="index.html#act">Write to us</a>
+    </div>
+
+    <main class="page-main" id="main">
+      <article class="wrap legal">
+        <p class="kicker">Legal</p>
+        <h1>Terms and conditions</h1>
+        <p class="legal-updated">Effective 7 September 2026 · Last updated 7 September 2026</p>
+
+        <aside class="legal-banner card">
+          <p><b>Example design.</b> This website is a design demonstration created by Aleksandar Kehayov (UX UI MATE). It is not a live commercial offer unless a separate company later adopts it. These terms are sample text written to current 2026 standards so the page can be shown in a portfolio. They are not legal advice.</p>
+          <p>© 2026 Aleksandar Kehayov / UX UI MATE. The design, interface, copy, images and code of this demonstration are protected. See section 3.</p>
+        </aside>
+
+        <ol class="legal-toc">
+          <li><a href="#about">1. Who these terms are for</a></li>
+          <li><a href="#agree">2. Agreement</a></li>
+          <li><a href="#protect">3. Design protection</a></li>
+          <li><a href="#service">4. The service (if offered live)</a></li>
+          <li><a href="#account">5. Accounts and eligibility</a></li>
+          <li><a href="#fees">6. Fees, billing and cancellation</a></li>
+          <li><a href="#use">7. Acceptable use</a></li>
+          <li><a href="#ai">8. Artificial intelligence and human handover</a></li>
+          <li><a href="#your-duties">9. Your responsibilities</a></li>
+          <li><a href="#ip">10. Intellectual property in the product</a></li>
+          <li><a href="#privacy">11. Privacy</a></li>
+          <li><a href="#warranty">12. Warranty and availability</a></li>
+          <li><a href="#liability">13. Liability</a></li>
+          <li><a href="#indemnity">14. Indemnity</a></li>
+          <li><a href="#end">15. Suspension and termination</a></li>
+          <li><a href="#changes">16. Changes</a></li>
+          <li><a href="#law">17. Governing law</a></li>
+          <li><a href="#contact">18. Contact</a></li>
+        </ol>
+
+        <h2 id="about">1. Who these terms are for</h2>
+        <p>These Terms and Conditions (“Terms”) apply to this website and, if a live service is later launched under the Halden name, to that service. In this demonstration, “Halden”, “we”, “us” and “our” refer to the design example presented by Aleksandar Kehayov, trading as UX UI MATE. “You” means a visitor to this website or, in a live deployment, the business that buys the service.</p>
+        <p>If a real operator later publishes a production version, that operator must replace this notice with its own legal name, address, company number and a lawyer-reviewed agreement.</p>
+
+        <h2 id="agree">2. Agreement</h2>
+        <p>By visiting this website you agree to these Terms and to the <a href="privacy.html">Privacy Policy</a>. If you do not agree, do not use the site.</p>
+        <p>In a live subscription, placing an order, completing a start form, or forwarding a telephone line to Halden would also form a contract. Consumer cooling-off rights under EU consumer law (as in force in 2026) would apply where you buy as a consumer. Most Halden buyers would be businesses acting in the course of a trade.</p>
+
+        <h2 id="protect">3. Design protection</h2>
+        <p>This website is an original design work by Aleksandar Kehayov (UX UI MATE). The following are protected by copyright, design right and applicable unfair-competition law, as they stand in 2026:</p>
+        <ul>
+          <li>visual design, layout, user interface and user experience;</li>
+          <li>colour system, typography, iconography and motion;</li>
+          <li>illustrations, photographs, banners and other images;</li>
+          <li>wording written for this demonstration, except short standard legal phrases;</li>
+          <li>HTML, CSS, JavaScript and other source code of this demonstration.</li>
+        </ul>
+        <p>© 2026 Aleksandar Kehayov / UX UI MATE. All rights reserved. No licence is granted except a limited right to view this example for evaluation.</p>
+        <p>You may not copy, clone, republish, scrape, train a model on, sell, or use this design or its code to build a competing page or product without prior written permission from Aleksandar Kehayov. Screenshots for honest editorial or recruitment review are allowed if credit is given and the work is not presented as your own.</p>
+        <p>The name “Halden” is used here as a design concept. It is not a grant of a trademark licence.</p>
+        <p>Permission requests: <a href="https://www.uxuimate.com" target="_blank" rel="noopener noreferrer">uxuimate.com</a>.</p>
+
+        <h2 id="service">4. The service (if offered live)</h2>
+        <p>Halden is described as an AI telephone agent that answers on the first ring, books in a calendar the customer already uses, and can bring a human onto the same call with context. Typical published price in this demonstration: €890 per month, per location.</p>
+        <p>A live service would be provided on a subscription basis. Features, languages, coverage hours and setup times shown on the marketing pages are descriptions of the intended product. They are not a guarantee until confirmed in an order.</p>
+        <p>We may use subcontractors (telephony, hosting, calendar connectors, human operators). We remain responsible to you for work they do for us, subject to these Terms.</p>
+
+        <h2 id="account">5. Accounts and eligibility</h2>
+        <p>You must be at least 18 and able to form a binding contract. If you act for a clinic or other business, you confirm you have authority to bind that business.</p>
+        <p>You must give accurate contact details and keep them current. You are responsible for anyone who uses your line, calendar connection or login.</p>
+
+        <h2 id="fees">6. Fees, billing and cancellation</h2>
+        <p>In a live offer, fees would be as stated at checkout or in the order (this demonstration shows €890 / month / location, excluding VAT where VAT applies). Billing would be in advance, each month, until cancelled.</p>
+        <p>You may cancel at the end of any monthly term by written notice before the next renewal, unless a different term is agreed in writing. Fees already paid for a started month are not refunded except where EU or local law requires a refund, or where we cancel for convenience.</p>
+        <p>Late payment may lead to suspension after a reminder. You remain responsible for charges incurred before suspension.</p>
+        <p>Taxes, including VAT, are extra where the law requires.</p>
+
+        <h2 id="use">7. Acceptable use</h2>
+        <p>You must not use the website or a live Halden service to:</p>
+        <ul>
+          <li>break the law, or help someone else break it;</li>
+          <li>send unlawful, harmful, or deceptive calls or messages;</li>
+          <li>interfere with other customers, networks, or emergency services;</li>
+          <li>probe, reverse engineer, or overload the service except as allowed by law;</li>
+          <li>misrepresent Halden as a human when transparency rules require disclosure that a caller is speaking to an automated system;</li>
+          <li>upload malware or attempt unauthorised access.</li>
+        </ul>
+        <p>We may block traffic or suspend a line that we reasonably believe is being abused.</p>
+
+        <h2 id="ai">8. Artificial intelligence and human handover</h2>
+        <p>Where a live service uses AI to answer or transcribe calls, the following 2026-standard rules apply as a baseline:</p>
+        <ul>
+          <li>AI can be wrong. It must not be treated as a substitute for professional medical, legal or financial advice.</li>
+          <li>Where the EU Artificial Intelligence Act (as applicable in 2026) or other law requires it, callers must be told they are interacting with an AI system, unless an exception applies.</li>
+          <li>Human oversight is part of the intended design: a person may join the call with a transcript and summary. That does not make every outcome perfect.</li>
+          <li>You decide how staff act on summaries. You remain responsible for clinical, booking and billing decisions in your practice.</li>
+          <li>Recordings, transcripts and models must be used only as described in the <a href="privacy.html">Privacy Policy</a> and any data-processing terms.</li>
+        </ul>
+        <p>We do not promise that every difficult call will be handed over in time, or that every language switch will succeed.</p>
+
+        <h2 id="your-duties">9. Your responsibilities</h2>
+        <p>You are responsible for:</p>
+        <ul>
+          <li>the number you forward, and for telling callers anything the law requires you to tell them;</li>
+          <li>the accuracy of opening hours, services, prices and calendar rules you give us;</li>
+          <li>staff who join a call, and for how they use the transcript;</li>
+          <li>consent and notices to patients or customers where you are the controller of their data;</li>
+          <li>not asking Halden to do anything your profession or regulator forbids.</li>
+        </ul>
+
+        <h2 id="ip">10. Intellectual property in the product</h2>
+        <p>If a live product exists, we (or our licensors) own the software, models, prompts, documentation and trademarks of that product. You receive a non-exclusive, non-transferable right to use it for your locations during a paid term.</p>
+        <p>You keep ownership of your calendars, recordings and customer data. You grant a limited licence to process them only to provide the service.</p>
+        <p>Feedback you send may be used to improve the design or the product without obligation to you.</p>
+
+        <h2 id="privacy">11. Privacy</h2>
+        <p>Personal data is handled as set out in the <a href="privacy.html">Privacy Policy</a>. For a live B2B service, a data-processing agreement would sit alongside these Terms where we process patient or customer data on your instructions.</p>
+
+        <h2 id="warranty">12. Warranty and availability</h2>
+        <p>This demonstration website is provided “as is”. We do not warrant that it is error-free or available without interruption.</p>
+        <p>A live service would be provided with reasonable skill and care. We would not warrant uninterrupted telephony, third-party calendar uptime, or that AI output is complete or correct. Statutory rights that cannot be excluded remain in place.</p>
+
+        <h2 id="liability">13. Liability</h2>
+        <p>Nothing in these Terms excludes liability for death or personal injury caused by negligence, fraud, or any liability that cannot be limited under the law that applies.</p>
+        <p>Subject to that: we are not liable for indirect or consequential loss, lost profit, lost bookings, reputational harm, or loss of data, except to the extent the law forbids that limit.</p>
+        <p>For a live paid service, our total liability in a contract year would be limited to the fees you paid for that year. For this demonstration website, liability is limited to the greatest extent permitted by law, and is typically nil because no fee is charged to view it.</p>
+
+        <h2 id="indemnity">14. Indemnity</h2>
+        <p>If you use this design or a live service in a way that breaks these Terms or the law, you will indemnify us against reasonable claims, damages and costs that result, including claims that your call content or your instructions were unlawful.</p>
+
+        <h2 id="end">15. Suspension and termination</h2>
+        <p>We may suspend or end access if you materially breach these Terms, fail to pay, or create a security or legal risk. You may stop using this website at any time. A live subscription ends as described in section 6.</p>
+        <p>Sections that should survive (including design protection, liability, indemnity and governing law) remain in force after the rest ends.</p>
+
+        <h2 id="changes">16. Changes</h2>
+        <p>We may update these Terms for the demonstration at any time by publishing a new version on this page and changing the date above. For a live paid service, material changes would be notified in advance by email where we have an address, and you could cancel before they take effect if you do not agree.</p>
+
+        <h2 id="law">17. Governing law</h2>
+        <p>These example Terms are written to be consistent with European Union law as it stands in 2026, including consumer-protection rules, the GDPR, the Digital Services Act, and the EU Artificial Intelligence Act where those instruments apply.</p>
+        <p>Disputes about this design demonstration are subject to the courts of the country in which Aleksandar Kehayov (UX UI MATE) is established, without prejudice to any mandatory forum a consumer may have. Mandatory local rights are not taken away.</p>
+        <p>If a clause is invalid, the rest remains in force.</p>
+
+        <h2 id="contact">18. Contact</h2>
+        <p>Design and permission: Aleksandar Kehayov · UX UI MATE · <a href="https://www.uxuimate.com" target="_blank" rel="noopener noreferrer">uxuimate.com</a></p>
+        <p>Example product mailbox shown on this site: <a href="mailto:hello@halden.com">hello@halden.com</a></p>
+        <p>Related: <a href="privacy.html">Privacy Policy</a></p>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap footer-grid">
+        <div class="footer-brand">
+          <p>Halden · The phone agent that stays when it gets hard.</p>
+          <p class="footer-legal">© 2026 Halden. All rights reserved.</p>
+          <p class="footer-credit">Designed by Aleksandar Kehayov · <a href="https://www.uxuimate.com" target="_blank" rel="noopener noreferrer">UX UI MATE</a></p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="terms.html">Terms</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="mailto:hello@halden.com">hello@halden.com</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
