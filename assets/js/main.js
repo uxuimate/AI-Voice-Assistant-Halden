@@ -288,8 +288,214 @@
     paint();
   }
 
+  /* Hero voice stage */
+  const voiceStage = document.getElementById("voice-stage");
+  if (voiceStage) {
+    const micBtn = voiceStage.querySelector("[data-voice-mic]");
+    const askEl = voiceStage.querySelector("[data-voice-ask]");
+    const replyEl = voiceStage.querySelector("[data-voice-reply]");
+    const askLine = voiceStage.querySelector('[data-voice-line="ask"]');
+    const replyLine = voiceStage.querySelector('[data-voice-line="reply"]');
+    const hintEl = voiceStage.querySelector("[data-voice-hint]");
+    const chips = [...voiceStage.querySelectorAll("[data-voice-chip]")];
+    const idleHint = hintEl?.textContent || "";
+    const scripts = {
+      mic: [
+        {
+          ask: [
+            { text: "Can I book a checkup for " },
+            { text: "Thursday morning", highlight: true },
+            { text: "?" },
+          ],
+          reply: [
+            { text: "Thursday at 09:20 or 11:40 with Dr Shah. " },
+            { text: "Which is better", highlight: true },
+            { text: "?" },
+          ],
+        },
+        {
+          ask: [
+            { text: "What if the AI " },
+            { text: "gets it wrong in front of a patient", highlight: true },
+            { text: "?" },
+          ],
+          reply: [
+            { text: "It does not bluff. " },
+            { text: "A briefed human joins the same call", highlight: true },
+            { text: "." },
+          ],
+        },
+        {
+          ask: [
+            { text: "Do I need a " },
+            { text: "new number or phone system", highlight: true },
+            { text: "?" },
+          ],
+          reply: [
+            { text: "No. Forward the line you already have. " },
+            { text: "Live the same afternoon", highlight: true },
+            { text: "." },
+          ],
+        },
+      ],
+      arrive: {
+        href: "#arrive",
+        ask: [
+          { text: "Why is this " },
+          { text: "not another phone bot", highlight: true },
+          { text: "?" },
+        ],
+        reply: [
+          { text: "The call does not fail " },
+          { text: "in front of your customer", highlight: true },
+          { text: "." },
+        ],
+      },
+      trust: {
+        href: "#trust",
+        ask: [
+          { text: "What happens " },
+          { text: "when a call goes wrong", highlight: true },
+          { text: "?" },
+        ],
+        reply: [
+          { text: "A human joins the same line — " },
+          { text: "already briefed", highlight: true },
+          { text: "." },
+        ],
+      },
+      how: {
+        href: "#how",
+        ask: [
+          { text: "How is this not " },
+          { text: "four times the same bot", highlight: true },
+          { text: "?" },
+        ],
+        reply: [
+          { text: "The expensive part is included: " },
+          { text: "a briefed human on the live call", highlight: true },
+          { text: "." },
+        ],
+      },
+      proof: {
+        href: "#proof",
+        ask: [
+          { text: "Does this actually " },
+          { text: "return the missed calls", highlight: true },
+          { text: "?" },
+        ],
+        reply: [
+          { text: "2,400+ businesses already on Halden. " },
+          { text: "See what they are worth", highlight: true },
+          { text: "." },
+        ],
+      },
+      pricing: {
+        href: "#pricing",
+        ask: [
+          { text: "What does this " },
+          { text: "cost per location", highlight: true },
+          { text: "?" },
+        ],
+        reply: [
+          { text: "€890 a month. " },
+          { text: "Live in one afternoon", highlight: true },
+          { text: "." },
+        ],
+      },
+    };
+
+    let run = 0;
+    let micIndex = 0;
+
+    const sleep = (ms) => new Promise((resolve) => window.setTimeout(resolve, ms));
+
+    const renderFull = (target, parts) => {
+      if (!target) return;
+      target.replaceChildren();
+      parts.forEach((part) => {
+        const node = document.createElement(part.highlight ? "mark" : "span");
+        if (part.highlight) node.className = "voice-mark";
+        node.textContent = part.text;
+        target.appendChild(node);
+      });
+    };
+
+    const typeParts = async (target, parts, token) => {
+      if (!target) return;
+      target.replaceChildren();
+      if (reduceMotion) {
+        renderFull(target, parts);
+        return;
+      }
+      for (const part of parts) {
+        const node = document.createElement(part.highlight ? "mark" : "span");
+        if (part.highlight) node.className = "voice-mark";
+        target.appendChild(node);
+        for (const ch of part.text) {
+          if (token !== run) return;
+          node.textContent += ch;
+          await sleep(ch === " " ? 16 : 24);
+        }
+      }
+    };
+
+    const setTyping = (line) => {
+      askLine?.classList.toggle("is-typing", line === "ask");
+      replyLine?.classList.toggle("is-typing", line === "reply");
+    };
+
+    const play = async (script, key) => {
+      if (!script) return;
+      const token = ++run;
+      voiceStage.classList.add("is-listening");
+      micBtn?.setAttribute("aria-pressed", "true");
+      chips.forEach((chip) => chip.classList.toggle("is-on", chip.getAttribute("data-voice-chip") === key));
+      askEl?.replaceChildren();
+      replyEl?.replaceChildren();
+      if (hintEl) hintEl.textContent = "Listening…";
+      setTyping("ask");
+      await typeParts(askEl, script.ask, token);
+      if (token !== run) return;
+      await sleep(reduceMotion ? 0 : 280);
+      if (token !== run) return;
+      if (hintEl) hintEl.textContent = script.href ? "Taking you there…" : "Halden";
+      setTyping("reply");
+      await typeParts(replyEl, script.reply, token);
+      if (token !== run) return;
+      await sleep(reduceMotion ? 0 : 640);
+      if (token !== run) return;
+      setTyping(null);
+      voiceStage.classList.remove("is-listening");
+      micBtn?.setAttribute("aria-pressed", "false");
+      micBtn?.setAttribute("aria-label", "Ask Halden again");
+      if (hintEl) hintEl.textContent = idleHint;
+      if (script.href && token === run) {
+        const target = document.querySelector(script.href);
+        target?.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+      }
+    };
+
+    micBtn?.addEventListener("click", () => {
+      const script = scripts.mic[micIndex % scripts.mic.length];
+      micIndex += 1;
+      chips.forEach((chip) => chip.classList.remove("is-on"));
+      play(script, "mic");
+    });
+
+    chips.forEach((chip) => {
+      chip.addEventListener("click", (event) => {
+        const key = chip.getAttribute("data-voice-chip");
+        const script = scripts[key];
+        if (!script) return;
+        event.preventDefault();
+        play(script, key);
+      });
+    });
+  }
+
   /* Clay-press reveal */
-  const heroCard = document.querySelector(".hero-visual .handoff");
+  const heroCard = document.querySelector(".hero .voice-stage");
   if (heroCard) heroCard.style.setProperty("--delay", "480ms");
 
   const onCardShown = (card) => {

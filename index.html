@@ -41,6 +41,7 @@
         Halden
       </a>
       <nav class="nav-links" aria-label="Primary">
+        <a href="#top">Home</a>
         <a href="#trust">When it breaks</a>
         <a href="#how">How it works</a>
         <a href="#proof">Proof</a>
@@ -69,6 +70,7 @@
     </header>
 
     <div class="mobile-nav" id="mobile-nav" hidden>
+      <a href="#top">Home</a>
       <a href="#trust">When it breaks</a>
       <a href="#how">How it works</a>
       <a href="#proof">Proof</a>
@@ -79,10 +81,64 @@
 
     <main id="main">
       <section class="hero" id="top">
-        <div class="wrap hero-grid">
-          <div class="hero-copy">
+        <div class="wrap">
+          <h1 class="sr-only">Halden — an AI phone agent that never misses a customer</h1>
+          <aside class="voice-stage card" id="voice-stage" aria-label="Ask Halden">
+            <p class="voice-hint" data-voice-hint>Select a section or tell me where you want to go</p>
+            <div class="voice-talk" aria-live="polite">
+              <p class="voice-query" data-voice-line="ask">
+                <span data-voice-ask></span><span class="voice-caret" aria-hidden="true"></span>
+              </p>
+              <p class="voice-reply" data-voice-line="reply">
+                <span data-voice-reply></span><span class="voice-caret" aria-hidden="true"></span>
+              </p>
+            </div>
+            <button class="voice-mic" type="button" data-voice-mic aria-pressed="false" aria-label="Ask Halden">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="micGrad" x1="6" y1="2" x2="18" y2="22" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#7c5cff" />
+                    <stop offset="100%" stop-color="#5b8cff" />
+                  </linearGradient>
+                </defs>
+                <rect x="9" y="3" width="6" height="11" rx="3" fill="url(#micGrad)" />
+                <path d="M7.2 11.2a4.8 4.8 0 0 0 9.6 0" stroke="url(#micGrad)" stroke-width="1.7" stroke-linecap="round" />
+                <path d="M12 16.2V20M9.2 20h5.6" stroke="url(#micGrad)" stroke-width="1.7" stroke-linecap="round" />
+              </svg>
+            </button>
+            <div class="voice-wave" aria-hidden="true">
+              <svg viewBox="0 0 360 72" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                  <linearGradient id="voiceWaveGrad" x1="0" y1="36" x2="360" y2="36" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#7c5cff" />
+                    <stop offset="42%" stop-color="#c084fc" />
+                    <stop offset="100%" stop-color="#67e8f9" />
+                  </linearGradient>
+                </defs>
+                <g class="voice-wave-group">
+                  <path d="M12 36 C 48 14, 84 58, 120 36 S 192 10, 228 36 S 300 62, 348 36" />
+                  <path d="M12 36 C 52 22, 88 50, 124 36 S 188 18, 228 36 S 296 54, 348 36" />
+                  <path d="M18 36 C 56 8, 96 64, 132 36 S 200 6, 236 36 S 304 66, 342 36" />
+                  <path d="M20 36 C 60 28, 100 44, 140 36 S 212 26, 248 36 S 308 46, 340 36" />
+                </g>
+              </svg>
+            </div>
+            <div class="voice-chips">
+              <a class="voice-chip" href="#arrive" data-voice-chip="arrive">Not another bot</a>
+              <a class="voice-chip" href="#trust" data-voice-chip="trust">When it breaks</a>
+              <a class="voice-chip" href="#how" data-voice-chip="how">How it works</a>
+              <a class="voice-chip" href="#proof" data-voice-chip="proof">Proof</a>
+              <a class="voice-chip" href="#pricing" data-voice-chip="pricing">Pricing</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section arrive" id="arrive">
+        <div class="wrap arrive-grid">
+          <div class="arrive-copy">
             <p class="kicker" data-in data-delay="60">Not another phone bot</p>
-            <h1 data-in data-delay="140">It’s not the missed calls you’re afraid of. It’s the one that goes wrong <span class="thin">in front of a customer.</span></h1>
+            <h2 data-in data-delay="140">It’s not the missed calls you’re afraid of. It’s the one that goes wrong <span class="thin">in front of a customer.</span></h2>
             <p class="hero-lead" data-in data-delay="240">When a call gets too human for a machine, a person joins — already briefed.</p>
             <div class="hero-actions" data-in data-delay="320">
               <a class="btn btn-primary" href="start.html" data-open-start>Get started</a>
@@ -90,9 +146,8 @@
             </div>
             <p class="hero-note" data-in data-delay="400">€890 a month, per location. Live in one afternoon.</p>
           </div>
-
-          <div class="hero-visual" aria-label="A routine call on Halden">
-            <aside class="handoff card">
+          <div class="arrive-visual">
+            <aside class="handoff card" aria-label="A routine call on Halden">
               <div class="handoff-bar" data-in>
                 <span>Call 1841 · 2 minutes</span>
                 <span>Answered</span>
