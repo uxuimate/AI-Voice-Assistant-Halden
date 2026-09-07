@@ -306,14 +306,6 @@ p {
   }
 }
 
-@media (min-width: 1220px) {
-  .nav {
-    left: max(2.5rem, calc((100% - var(--max)) / 2));
-    right: max(2.5rem, calc((100% - var(--max)) / 2));
-    gap: 1.1rem;
-  }
-}
-
 .logo {
   display: inline-flex;
   align-items: center;
