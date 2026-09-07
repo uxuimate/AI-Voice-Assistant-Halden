@@ -2020,8 +2020,8 @@ html[data-theme="dark"] .voice-chip:focus-visible {
 }
 
 .footer-tagline {
-  max-width: 28ch;
   color: var(--soft);
+  white-space: nowrap;
 }
 
 .footer-links {
