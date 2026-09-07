@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Set this up — Halden</title>
+    <title>Get Halden — Halden</title>
     <meta
       name="description"
       content="Tell Halden the one call you do not want an AI to improvise. Same-day reply. €890 per location. Live in one afternoon."
@@ -42,7 +42,7 @@
       <nav class="nav-links" aria-label="Primary">
         <a href="index.html#trust">A hard call</a>
         <a href="index.html#how">How it works</a>
-        <a href="index.html#pricing">The price</a>
+        <a href="index.html#pricing">Price</a>
         <a href="index.html#faq">Questions</a>
         <a href="index.html#act">Write to us</a>
       </nav>
@@ -69,7 +69,7 @@
     <div class="mobile-nav" id="mobile-nav" hidden>
       <a href="index.html#trust">A hard call</a>
       <a href="index.html#how">How it works</a>
-      <a href="index.html#pricing">The price</a>
+      <a href="index.html#pricing">Price</a>
       <a href="index.html#faq">Questions</a>
       <a href="index.html#act">Write to us</a>
       <a href="index.html">Back to Halden</a>
@@ -78,19 +78,21 @@
     <main class="page-main" id="main">
       <div class="wrap start-grid">
         <aside class="start-aside">
-          <p class="kicker" data-in>Set this up</p>
-          <h1 data-in data-delay="80">Tell us the call you do not want improvised.</h1>
-          <p data-in data-delay="160">We reply the same day. No forty-minute pitch. We set Halden up around that call, on the number you already have.</p>
+          <p class="kicker" data-in id="start-kicker">Get Halden</p>
+          <h1 data-in data-delay="80" id="start-title">We’ll put it on your line.</h1>
+          <p data-in data-delay="160" id="start-lead">€890 a month, per location. Same-afternoon setup. Tell us the call you do not want guessed.</p>
           <ul class="start-points">
             <li>€890 per month, per location. Published. Flat.</li>
             <li>First ring, 24/7. Books in the calendar you already use.</li>
             <li>A person can join the call, with notes on what was said — included.</li>
             <li>Typical go-live: one afternoon. No new phone system.</li>
           </ul>
+          <p class="hero-note" data-in data-delay="240" id="start-switch">Not ready to start? <a href="start.html?intent=walk">Book a 15-minute walkthrough</a>.</p>
         </aside>
 
         <div class="start-card card">
           <form class="form" id="start-form" novalidate>
+            <input type="hidden" name="intent" id="intent" value="buy" />
             <div class="field">
               <label for="name">Your name</label>
               <input class="input" id="name" name="name" type="text" autocomplete="name" required />
@@ -116,7 +118,7 @@
               <textarea class="input" id="fear" name="fear" rows="4" required placeholder="e.g. a parent ringing about a child in pain after we close"></textarea>
               <span class="err">One sentence is enough.</span>
             </div>
-            <button class="btn btn-primary" type="button" data-submit>Send — we’ll reply today</button>
+            <button class="btn btn-primary" type="button" data-submit id="start-submit">Send — we’ll start this week</button>
           </form>
           <div class="form-success" id="start-success">
             <h3>Received. We’ll be in touch today.</h3>
@@ -134,7 +136,7 @@
           <p class="footer-credit">Designed by <a href="https://www.uxuimate.com" target="_blank" rel="noopener noreferrer">UX UI MATE</a></p>
         </div>
         <div class="footer-links">
-          <a href="index.html#pricing">The price</a>
+          <a href="index.html#pricing">Price</a>
           <a href="index.html#faq">Questions</a>
           <a href="index.html#act">Write to us</a>
           <a href="index.html">Home</a>

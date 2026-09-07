@@ -178,10 +178,47 @@
   const overlay = document.getElementById("start-modal");
   const openers = document.querySelectorAll("[data-open-start]");
   const closeBtn = document.querySelector("[data-close-modal]");
+  const modalCopy = {
+    buy: {
+      kicker: "Get Halden",
+      title: "We’ll put it on your line.",
+      lead: "€890 a month, per location. Same-afternoon setup. Tell us the call you do not want guessed.",
+      submit: "Send — we’ll start this week",
+      doneTitle: "Received. We’ll be in touch today.",
+      doneLead: "If the line is busy on your side, check email. No deck attached.",
+    },
+    walk: {
+      kicker: "Book a walkthrough",
+      title: "Fifteen minutes. One hard call.",
+      lead: "No deck. We walk through the call you are afraid a machine would get wrong.",
+      submit: "Book the walkthrough",
+      doneTitle: "Walkthrough booked. We’ll send a time today.",
+      doneLead: "Fifteen minutes. No pitch deck. Check email if we miss you.",
+    },
+  };
+
+  const applyIntent = (intent) => {
+    const copy = modalCopy[intent] || modalCopy.buy;
+    const kicker = overlay?.querySelector("[data-modal-kicker]");
+    const title = document.getElementById("modal-title");
+    const lead = overlay?.querySelector("[data-modal-lead]");
+    const submit = overlay?.querySelector("[data-modal-submit]");
+    const doneTitle = overlay?.querySelector("[data-modal-done-title]");
+    const doneLead = overlay?.querySelector("[data-modal-done-lead]");
+    const intentField = document.getElementById("m-intent");
+    if (kicker) kicker.textContent = copy.kicker;
+    if (title) title.textContent = copy.title;
+    if (lead) lead.textContent = copy.lead;
+    if (submit) submit.textContent = copy.submit;
+    if (doneTitle) doneTitle.textContent = copy.doneTitle;
+    if (doneLead) doneLead.textContent = copy.doneLead;
+    if (intentField) intentField.value = modalCopy[intent] ? intent : "buy";
+  };
 
   const openModal = (event) => {
     if (!overlay) return;
     event.preventDefault();
+    applyIntent(event.currentTarget.getAttribute("data-intent") || "buy");
     overlay.hidden = false;
     overlay.classList.add("is-open");
     document.body.classList.add("modal-lock");
@@ -248,6 +285,22 @@
     document.getElementById("start-success")?.classList.add("is-on");
   });
 
+  if (new URLSearchParams(window.location.search).get("intent") === "walk") {
+    const kicker = document.getElementById("start-kicker");
+    const title = document.getElementById("start-title");
+    const lead = document.getElementById("start-lead");
+    const submit = document.getElementById("start-submit");
+    const field = document.getElementById("intent");
+    if (kicker) kicker.textContent = "Book a walkthrough";
+    if (title) title.textContent = "Fifteen minutes. One hard call.";
+    if (lead) lead.textContent = "No deck. We walk through the call you are afraid a machine would get wrong.";
+    if (submit) submit.textContent = "Book the walkthrough";
+    if (field) field.value = "walk";
+    document.title = "Book a walkthrough — Halden";
+    const switcher = document.getElementById("start-switch");
+    if (switcher) switcher.innerHTML = 'Ready this afternoon? <a href="start.html">Get Halden</a>.';
+  }
+
   /* Savings calculator */
   const calls = document.getElementById("save-calls");
   const visit = document.getElementById("save-value");
@@ -255,17 +308,21 @@
     const money = (n) =>
       "€" + Math.round(n).toLocaleString("en-GB");
     const paint = () => {
-      const weekly = Number(calls.value) * Number(visit.value);
+      const visitValue = Number(visit.value);
+      const weekly = Number(calls.value) * visitValue;
       const yearly = weekly * 52;
       const net = yearly - 890 * 12;
       const hours = Math.round((Number(calls.value) * 8 * 4.33) / 60);
+      const coverWeek = Math.max(1, Math.ceil(890 / (visitValue * 4.33)));
       const callsOut = document.getElementById("save-calls-out");
       const valueOut = document.getElementById("save-value-out");
+      const coverCopy = document.getElementById("save-cover-copy");
       const netEl = document.getElementById("save-net");
       const yearEl = document.getElementById("save-year");
       const hoursEl = document.getElementById("save-hours");
       if (callsOut) callsOut.textContent = calls.value;
       if (valueOut) valueOut.textContent = "€" + visit.value;
+      if (coverCopy) coverCopy.textContent = String(coverWeek);
       if (netEl) netEl.textContent = money(net);
       if (yearEl) yearEl.textContent = money(yearly);
       if (hoursEl) hoursEl.textContent = String(hours);
@@ -392,9 +449,9 @@
       proof: {
         href: "#proof",
         ask: [
-          { text: "What do " },
-          { text: "the numbers", highlight: true },
-          { text: " look like?" },
+          { text: "Where is the " },
+          { text: "proof", highlight: true },
+          { text: "?" },
         ],
         reply: [
           { text: "2,400+ businesses already on Halden. " },
@@ -406,7 +463,7 @@
         href: "#pricing",
         ask: [
           { text: "What is " },
-          { text: "the price per location", highlight: true },
+          { text: "the price", highlight: true },
           { text: "?" },
         ],
         reply: [
