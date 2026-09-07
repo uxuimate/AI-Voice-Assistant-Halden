@@ -2347,6 +2347,10 @@ textarea.input {
   color: var(--ink);
 }
 
+.legal code {
+  font-size: 0.9em;
+}
+
 body.modal-lock {
   overflow: hidden;
 }
