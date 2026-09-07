@@ -337,12 +337,24 @@
             { text: "." },
           ],
         },
+        {
+          ask: [
+            { text: "Are you still answering " },
+            { text: "on Sunday evening", highlight: true },
+            { text: "?" },
+          ],
+          reply: [
+            { text: "First ring, 24/7. " },
+            { text: "Weekends and holidays included", highlight: true },
+            { text: "." },
+          ],
+        },
       ],
       arrive: {
         href: "#arrive",
         ask: [
-          { text: "Why is this " },
-          { text: "not another phone bot", highlight: true },
+          { text: "Why is " },
+          { text: "Halden different", highlight: true },
           { text: "?" },
         ],
         reply: [
@@ -354,8 +366,8 @@
       trust: {
         href: "#trust",
         ask: [
-          { text: "What happens " },
-          { text: "when a call goes wrong", highlight: true },
+          { text: "What happens on " },
+          { text: "a hard call", highlight: true },
           { text: "?" },
         ],
         reply: [
@@ -380,21 +392,21 @@
       proof: {
         href: "#proof",
         ask: [
-          { text: "Does this actually " },
-          { text: "return the missed calls", highlight: true },
-          { text: "?" },
+          { text: "What do " },
+          { text: "the numbers", highlight: true },
+          { text: " look like?" },
         ],
         reply: [
           { text: "2,400+ businesses already on Halden. " },
-          { text: "See what they are worth", highlight: true },
+          { text: "See what the calls are worth", highlight: true },
           { text: "." },
         ],
       },
       pricing: {
         href: "#pricing",
         ask: [
-          { text: "What does this " },
-          { text: "cost per location", highlight: true },
+          { text: "What is " },
+          { text: "the price per location", highlight: true },
           { text: "?" },
         ],
         reply: [
