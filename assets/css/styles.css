@@ -2024,6 +2024,7 @@ html[data-theme="dark"] .voice-chip:focus-visible {
   gap: 0.35rem;
 }
 
+.footer-legal,
 .footer-credit {
   color: var(--muted);
 }
@@ -2259,6 +2260,91 @@ textarea.input {
   border-radius: 28px;
   box-shadow: var(--neu-lg);
   padding: 1.85rem 1.6rem;
+}
+
+.legal {
+  max-width: 68ch;
+}
+
+.legal-banner {
+  padding: 1.35rem 1.45rem 1.4rem;
+  margin-bottom: 2.25rem;
+}
+
+.legal-banner p {
+  font-weight: 300;
+  color: var(--soft);
+}
+
+.legal-banner p + p {
+  margin-top: 0.7rem;
+}
+
+.legal h1 {
+  max-width: 16ch;
+  margin: 0.15rem 0 0.7rem;
+}
+
+.legal-updated {
+  color: var(--muted);
+  font-weight: 300;
+  margin-bottom: 1.75rem;
+}
+
+.legal-toc {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0 0 2.25rem;
+  padding: 0;
+  list-style: none;
+}
+
+.legal-toc a {
+  color: var(--accent);
+  font-weight: 400;
+}
+
+.legal-toc a:hover {
+  color: var(--ink);
+}
+
+.legal h2 {
+  font-size: 1.4rem;
+  max-width: none;
+  margin: 2.35rem 0 0.7rem;
+}
+
+.legal h3 {
+  font-size: 1.08rem;
+  margin: 1.4rem 0 0.45rem;
+}
+
+.legal p,
+.legal li {
+  font-weight: 300;
+  color: var(--soft);
+}
+
+.legal p + p {
+  margin-top: 0.8rem;
+}
+
+.legal ol,
+.legal ul {
+  margin: 0.75rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.legal li + li {
+  margin-top: 0.4rem;
+}
+
+.legal a {
+  color: var(--accent);
+}
+
+.legal a:hover {
+  color: var(--ink);
 }
 
 body.modal-lock {
