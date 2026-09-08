@@ -523,25 +523,45 @@ html[data-theme="dark"] .theme-toggle .icon-sun {
 /* Hero */
 .hero {
   --hero-top: calc(14px + 64px + 12px);
-  --hero-bottom: 12px;
+  --hero-bottom: 1.25rem;
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   min-height: 100svh;
   padding: var(--hero-top) 0 var(--hero-bottom);
-  overflow: hidden;
   box-sizing: border-box;
 }
 
 .hero .wrap {
   width: min(var(--max), calc(100% - 1.5rem));
   display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 1 1 auto;
+  min-height: calc(100svh - var(--hero-top) - var(--hero-bottom));
+  gap: 1.35rem;
 }
 
 @media (min-width: 768px) {
   .hero .wrap {
     width: min(var(--max), calc(100% - 3.5rem));
+    gap: 1.75rem;
   }
+}
+
+.hero-intro {
+  width: 100%;
+}
+
+.hero-intro h1 {
+  max-width: none;
+  font-size: clamp(2.15rem, 5.2vw, 4.7rem);
+}
+
+.hero-intro .hero-lead {
+  margin-top: 0.9rem;
+  max-width: none;
 }
 
 .hero .voice-stage {
@@ -556,8 +576,8 @@ html[data-theme="dark"] .theme-toggle .icon-sun {
   justify-content: space-between;
   gap: clamp(0.65rem, 1.6vh, 1.6rem);
   width: 100%;
-  height: min(38rem, calc(100svh - var(--hero-top) - var(--hero-bottom)));
-  max-height: calc(100svh - var(--hero-top) - var(--hero-bottom));
+  flex: 1 1 auto;
+  min-height: 22rem;
   padding: clamp(1.1rem, 2.8vh, 2.6rem) clamp(1rem, 3.2vw, 3rem) clamp(0.95rem, 2.2vh, 1.8rem);
   text-align: center;
   overflow: auto;
