@@ -110,19 +110,25 @@
                 <span data-voice-reply></span><span class="voice-caret" aria-hidden="true"></span>
               </p>
             </div>
-            <button class="voice-mic" type="button" data-voice-mic aria-pressed="false" aria-label="Ask Halden">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <defs>
-                  <linearGradient id="micGrad" x1="6" y1="2" x2="18" y2="22" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stop-color="#7c5cff" />
-                    <stop offset="100%" stop-color="#5b8cff" />
-                  </linearGradient>
-                </defs>
-                <rect x="9" y="3" width="6" height="11" rx="3" fill="url(#micGrad)" />
-                <path d="M7.2 11.2a4.8 4.8 0 0 0 9.6 0" stroke="url(#micGrad)" stroke-width="1.7" stroke-linecap="round" />
-                <path d="M12 16.2V20M9.2 20h5.6" stroke="url(#micGrad)" stroke-width="1.7" stroke-linecap="round" />
-              </svg>
-            </button>
+            <div class="voice-mic-block">
+              <button class="voice-mic" type="button" data-voice-mic aria-pressed="false" aria-label="Ask Halden">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="micGrad" x1="6" y1="2" x2="18" y2="22" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stop-color="#7c5cff" />
+                      <stop offset="100%" stop-color="#5b8cff" />
+                    </linearGradient>
+                  </defs>
+                  <rect x="9" y="3" width="6" height="11" rx="3" fill="url(#micGrad)" />
+                  <path d="M7.2 11.2a4.8 4.8 0 0 0 9.6 0" stroke="url(#micGrad)" stroke-width="1.7" stroke-linecap="round" />
+                  <path d="M12 16.2V20M9.2 20h5.6" stroke="url(#micGrad)" stroke-width="1.7" stroke-linecap="round" />
+                </svg>
+              </button>
+              <p class="voice-mic-tip" aria-hidden="true">
+                <span data-tip-idle>Speak now</span>
+                <span data-tip-live>Listening</span>
+              </p>
+            </div>
             <div class="voice-wave" aria-hidden="true">
               <svg viewBox="0 0 400 120" preserveAspectRatio="none">
                 <defs>

@@ -656,6 +656,14 @@ html[data-theme="dark"] .theme-toggle .icon-sun {
   }
 }
 
+.voice-mic-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  flex-shrink: 0;
+}
+
 .voice-mic {
   position: relative;
   display: inline-flex;
@@ -673,6 +681,18 @@ html[data-theme="dark"] .theme-toggle .icon-sun {
   transition: box-shadow var(--ease), transform var(--ease);
 }
 
+.voice-mic::before {
+  content: "";
+  position: absolute;
+  inset: -11px;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, #7c5cff 22%, transparent),
+    var(--neu-sm);
+  pointer-events: none;
+  opacity: 0.7;
+}
+
 .voice-mic svg {
   width: 55%;
   height: 55%;
@@ -681,7 +701,7 @@ html[data-theme="dark"] .theme-toggle .icon-sun {
 .voice-mic::after {
   content: "";
   position: absolute;
-  inset: -10px;
+  inset: -16px;
   border-radius: 50%;
   box-shadow: 0 0 0 0 rgba(124, 92, 255, 0.22);
   pointer-events: none;
@@ -695,6 +715,13 @@ html[data-theme="dark"] .theme-toggle .icon-sun {
   box-shadow: var(--neu-press);
 }
 
+.voice-stage.is-listening .voice-mic::before {
+  opacity: 1;
+  box-shadow:
+    0 0 0 2px color-mix(in srgb, #7c5cff 38%, transparent),
+    var(--neu-press);
+}
+
 .voice-mic:hover {
   box-shadow: var(--neu-press);
 }
@@ -704,13 +731,36 @@ html[data-theme="dark"] .theme-toggle .icon-sun {
   box-shadow: var(--neu-in), var(--focus);
 }
 
+.voice-mic-tip {
+  margin: 0;
+  min-height: 1.15em;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.voice-mic-tip [data-tip-live] {
+  display: none;
+  color: #7c5cff;
+}
+
+.voice-stage.is-listening .voice-mic-tip [data-tip-idle] {
+  display: none;
+}
+
+.voice-stage.is-listening .voice-mic-tip [data-tip-live] {
+  display: inline;
+}
+
 @keyframes voice-invite {
   0% {
     box-shadow: 0 0 0 0 rgba(124, 92, 255, 0.22);
   }
   70%,
   100% {
-    box-shadow: 0 0 0 14px rgba(124, 92, 255, 0);
+    box-shadow: 0 0 0 18px rgba(124, 92, 255, 0);
   }
 }
 
@@ -890,6 +940,20 @@ html[data-theme="dark"] .voice-mic {
     inset 5px 6px 12px rgba(0, 0, 0, 0.55),
     inset -3px -3px 8px rgba(255, 255, 255, 0.04),
     0 0 0 1px rgba(124, 92, 255, 0.28);
+}
+
+html[data-theme="dark"] .voice-mic::before {
+  box-shadow:
+    0 0 0 1px rgba(124, 92, 255, 0.32),
+    6px 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+html[data-theme="dark"] .voice-mic-tip {
+  color: #b8b0a4;
+}
+
+html[data-theme="dark"] .voice-mic-tip [data-tip-live] {
+  color: #c4b5fd;
 }
 
 html[data-theme="dark"] .voice-stage:not(.is-listening) .voice-wave {
