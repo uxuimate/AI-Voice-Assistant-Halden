@@ -183,32 +183,22 @@
       </section>
 
       <section class="section" id="problem">
-        <div class="wrap">
-          <p class="kicker" data-in>The cheap-bot problem</p>
-          <h2 data-in data-delay="80">You’ve already been pitched <span class="thin">the other three.</span></h2>
-          <div class="issues">
-            <article class="card">
-              <span>01</span>
-              <h3>A bad AI moment is public</h3>
-              <p>One clumsy reply in front of a patient does more damage than a missed voicemail.</p>
-            </article>
-            <article class="card">
-              <span>02</span>
-              <h3>Cheap bots freeze on hard calls</h3>
-              <p>Sunday, a second language, a billing fight. That is where generic receptionists go quiet.</p>
-            </article>
-            <article class="card">
-              <span>03</span>
-              <h3>Price looks fine until it fails</h3>
-              <p>€79–€300 plans do not include a human who already has the transcript.</p>
-            </article>
+        <div class="wrap problem-grid">
+          <div class="problem-copy">
+            <p class="kicker" data-in>The cheap-bot problem</p>
+            <h2 data-in data-delay="80">You’ve already been pitched <span class="thin">the other three.</span></h2>
           </div>
-          <div class="section-actions" data-in>
-            <a class="btn btn-primary" href="#trust">See a hard call</a>
-          </div>
+          <aside class="charge well" data-in data-delay="160">
+            <p><b>A bad AI moment is public.</b> One clumsy reply in front of a patient does more damage than a missed voicemail.</p>
+            <p><b>Cheap bots freeze on hard calls.</b> Sunday, a second language, a billing fight. That is where generic receptionists go quiet.</p>
+            <p><b>Price looks fine until it fails.</b> €79–€300 plans do not include a human who already has the transcript.</p>
+          </aside>
           <figure class="photo-band">
             <img src="assets/images/halden-social.jpg" alt="Halden — always on, always human" width="1672" height="941" loading="lazy" decoding="async" />
           </figure>
+          <div class="section-actions" data-in>
+            <a class="btn btn-primary" href="#trust">See a hard call</a>
+          </div>
         </div>
       </section>
 
@@ -218,51 +208,37 @@
             <p class="kicker" data-in>When a call gets hard</p>
             <h2 data-in data-delay="80">The call does not fail in front of <span class="thin">your customer.</span></h2>
             <p class="section-lead" data-in data-delay="160">Every other page tells you the AI will answer. We lead with the moment it should not.</p>
-            <div class="steps">
-              <div class="step card">
-                <div class="step-n">01</div>
-                <div>
-                  <h3>Halden notices the edge</h3>
-                  <p>Anger, urgency, a promise it cannot keep. It does not bluff.</p>
-                </div>
-              </div>
-              <div class="step card">
-                <div class="step-n">02</div>
-                <div>
-                  <h3>A human is already listening</h3>
-                  <p>Same line. No hold music. They join with the live transcript as they speak.</p>
-                </div>
-              </div>
-              <div class="step card">
-                <div class="step-n">03</div>
-                <div>
-                  <h3>They get a summary, not a shrug</h3>
-                  <p>Intent, constraints, what was promised. Staff are not starting from zero.</p>
-                </div>
-              </div>
-            </div>
             <div class="section-actions" data-in>
               <a class="btn btn-primary" href="start.html" data-open-start data-intent="buy">Get Halden</a>
               <a class="btn btn-ghost" href="#how">See how it works</a>
             </div>
           </div>
 
-          <aside class="handoff card" aria-label="What your staff see when they join">
+          <aside class="handoff card" aria-label="What happens when a call gets hard">
             <div class="handoff-bar" data-in>
               <span>Call 1842 · 4 minutes</span>
               <span class="live"><i></i> Human on the line</span>
             </div>
-            <p class="handoff-line" data-in><b>Caller</b> Temporary crown off. Pain. Cannot wait until Thursday.</p>
-            <p class="handoff-line" data-in><b>Halden</b> Offered 11:40 or 14:10. Caller took 11:40, then lost trust.</p>
-            <p class="handoff-line human" data-in><b>Maya joined 09:15</b> Held the slot. Text sent. Do not move this booking.</p>
-            <div class="handoff-summary" data-in>
-              <h4>What your staff see</h4>
-              <ul>
-                <li>Existing patient, crown failure, pain</li>
-                <li>Hard constraint: meeting at 16:00</li>
-                <li>Trust issue: previous cancelled booking</li>
-                <li>Slot held · text sent · no re-explain</li>
-              </ul>
+            <div class="protocol-beat" data-in>
+              <p class="protocol-n">01 <span>Halden notices the edge</span></p>
+              <p class="handoff-line"><b>Caller</b> Temporary crown off. Pain. Cannot wait until Thursday.</p>
+              <p class="handoff-line"><b>Halden</b> Offered 11:40 or 14:10. Caller took 11:40, then lost trust.</p>
+            </div>
+            <div class="protocol-beat" data-in>
+              <p class="protocol-n">02 <span>A human is already listening</span></p>
+              <p class="handoff-line human"><b>Maya joined 09:15</b> Held the slot. Text sent. Do not move this booking.</p>
+            </div>
+            <div class="protocol-beat" data-in>
+              <p class="protocol-n">03 <span>They get a summary, not a shrug</span></p>
+              <div class="handoff-summary">
+                <h4>What your staff see</h4>
+                <ul>
+                  <li>Existing patient, crown failure, pain</li>
+                  <li>Hard constraint: meeting at 16:00</li>
+                  <li>Trust issue: previous cancelled booking</li>
+                  <li>Slot held · text sent · no re-explain</li>
+                </ul>
+              </div>
             </div>
           </aside>
         </div>
@@ -278,23 +254,11 @@
           <figure class="photo-band">
             <img src="assets/images/halden-social.png" alt="When a call gets difficult, Halden brings a person onto the line with the full context" width="1672" height="941" loading="lazy" decoding="async" />
           </figure>
-          <div class="how-grid">
-            <article class="card">
-              <span>01</span>
-              <h3>First ring. 24/7. Your number.</h3>
-              <p>Weekends and holidays too. Forward the line on the door. No new system, no new number.</p>
-            </article>
-            <article class="card">
-              <span>02</span>
-              <h3>Writes into the calendar you already use.</h3>
-              <p>Books, reschedules and cancels in the diary you already run. Live the same afternoon.</p>
-            </article>
-            <article class="card">
-              <span>03</span>
-              <h3>A person can take over.</h3>
-              <p>Someone from your side joins the same call, with notes on what was already said. Included — not extra.</p>
-            </article>
-          </div>
+          <p class="how-strip" data-in>
+            <span>Your number</span>
+            <span>Your calendar</span>
+            <span>A person on the same call</span>
+          </p>
           <div class="section-actions" data-in>
             <a class="btn btn-primary" href="start.html" data-open-start data-intent="buy">Get Halden</a>
             <a class="btn btn-ghost" href="#proof">See the proof</a>
@@ -372,23 +336,9 @@
         <div class="wrap">
           <p class="kicker" data-in>Proof before the price</p>
           <h2 data-in data-delay="80">The record so far.</h2>
-          <div class="stats-row" aria-label="Halden in numbers">
-            <div class="stat card">
-              <b data-count="2400" data-suffix="+">2,400+</b>
-              <span>Businesses already on Halden</span>
-            </div>
-            <div class="stat card">
-              <b data-count="6.1" data-decimals="1" data-suffix="M">6.1M</b>
-              <span>Calls already answered</span>
-            </div>
-            <div class="stat card">
-              <b data-count="31">31</b>
-              <span>Recovered / week, average clinic</span>
-            </div>
-            <div class="stat card">
-              <b>One afternoon</b>
-              <span>Typical time to go live</span>
-            </div>
+          <div class="proof-lead" data-in data-delay="140">
+            <b data-count="2400" data-suffix="+">2,400+</b>
+            <span>Businesses already on Halden. 6.1M calls answered. 31 recovered a week, average clinic. Live in one afternoon.</span>
           </div>
           <div class="save-grid" id="savings">
             <div>
