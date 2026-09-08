@@ -1482,7 +1482,7 @@ html[data-theme="dark"] .voice-chip:focus-visible {
 
 .steps {
   display: grid;
-  gap: 0.95rem;
+  gap: 20px;
   margin-top: 2.25rem;
 }
 
