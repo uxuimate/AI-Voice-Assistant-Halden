@@ -480,7 +480,7 @@
           { text: "?" },
         ],
         reply: [
-          { text: "The hard ones: a wrong answer, a new number, " },
+          { text: "The hard ones: a wrong answer, a clinic like yours, " },
           { text: "and how soon it can be live", highlight: true },
           { text: "." },
         ],
