@@ -556,7 +556,7 @@ html[data-theme="dark"] .theme-toggle .icon-sun {
 
 .hero-intro h1 {
   max-width: none;
-  font-size: clamp(2.15rem, 5.2vw, 4.7rem);
+  font-size: clamp(2.15rem, 3.9vw, 3.5rem);
 }
 
 .hero-intro .hero-lead {
