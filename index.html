@@ -268,6 +268,48 @@
         </div>
       </section>
 
+      <section class="section band" id="proof">
+        <div class="wrap">
+          <p class="kicker" data-in>Proof before the price</p>
+          <h2 data-in data-delay="80">The record so far.</h2>
+          <div class="proof-lead" data-in data-delay="140">
+            <b data-count="2400" data-suffix="+">2,400+</b>
+            <span>Businesses already on Halden. 6.1M calls answered. 31 recovered a week, average clinic. Live in one afternoon.</span>
+          </div>
+          <div class="save-grid" id="savings">
+            <div>
+              <p class="kicker" data-in>What it takes</p>
+              <h2 data-in data-delay="80">A few extra visits cover <span class="thin">the whole fee.</span></h2>
+              <p class="section-lead" data-in data-delay="160">You need just <span id="save-cover-copy">3</span> extra visits a week to cover €890. Halden currently recovers an average of 31 missed visits a week.</p>
+              <div class="save-control">
+                <div class="save-label">
+                  <span>Missed visits recovered / week</span>
+                  <output id="save-calls-out" for="save-calls">31</output>
+                </div>
+                <input class="slider" id="save-calls" type="range" min="3" max="80" value="31" />
+              </div>
+              <div class="save-control">
+                <div class="save-label">
+                  <span>Value of one kept visit</span>
+                  <output id="save-value-out" for="save-value">€80</output>
+                </div>
+                <input class="slider" id="save-value" type="range" min="40" max="250" step="5" value="80" />
+              </div>
+              <p class="save-note">At €80 a visit, 3 a week covers the month. 31 a week is the Halden clinic average.</p>
+            </div>
+            <aside class="save-result card" aria-live="polite">
+              <p class="kicker">Annual return</p>
+              <div class="save-amount" id="save-net">€118,280</div>
+              <p class="save-after">after Halden, at €890 / month</p>
+              <div class="math-row"><span>Recovered / year</span><span id="save-year">€128,960</span></div>
+              <div class="math-row"><span>Halden / year</span><span>€10,680</span></div>
+              <div class="math-row total"><span>Hours back / month</span><span id="save-hours">18</span></div>
+              <a class="btn btn-primary" href="start.html" data-open-start data-intent="buy">Get Halden</a>
+            </aside>
+          </div>
+        </div>
+      </section>
+
       <section class="section" id="testimonials">
         <div class="wrap">
           <p class="kicker" data-in>From people who had the same fear</p>
@@ -331,48 +373,6 @@
           <figure class="photo-band">
             <img src="assets/images/halden-desk.png" alt="Not just another AI phone bot — a better plan for when things go wrong" width="1672" height="941" loading="lazy" decoding="async" />
           </figure>
-        </div>
-      </section>
-
-      <section class="section band" id="proof">
-        <div class="wrap">
-          <p class="kicker" data-in>Proof before the price</p>
-          <h2 data-in data-delay="80">The record so far.</h2>
-          <div class="proof-lead" data-in data-delay="140">
-            <b data-count="2400" data-suffix="+">2,400+</b>
-            <span>Businesses already on Halden. 6.1M calls answered. 31 recovered a week, average clinic. Live in one afternoon.</span>
-          </div>
-          <div class="save-grid" id="savings">
-            <div>
-              <p class="kicker" data-in>What it takes</p>
-              <h2 data-in data-delay="80">A few extra visits cover <span class="thin">the whole fee.</span></h2>
-              <p class="section-lead" data-in data-delay="160">You need just <span id="save-cover-copy">3</span> extra visits a week to cover €890. Halden currently recovers an average of 31 missed visits a week.</p>
-              <div class="save-control">
-                <div class="save-label">
-                  <span>Missed visits recovered / week</span>
-                  <output id="save-calls-out" for="save-calls">31</output>
-                </div>
-                <input class="slider" id="save-calls" type="range" min="3" max="80" value="31" />
-              </div>
-              <div class="save-control">
-                <div class="save-label">
-                  <span>Value of one kept visit</span>
-                  <output id="save-value-out" for="save-value">€80</output>
-                </div>
-                <input class="slider" id="save-value" type="range" min="40" max="250" step="5" value="80" />
-              </div>
-              <p class="save-note">At €80 a visit, 3 a week covers the month. 31 a week is the Halden clinic average.</p>
-            </div>
-            <aside class="save-result card" aria-live="polite">
-              <p class="kicker">Annual return</p>
-              <div class="save-amount" id="save-net">€118,280</div>
-              <p class="save-after">after Halden, at €890 / month</p>
-              <div class="math-row"><span>Recovered / year</span><span id="save-year">€128,960</span></div>
-              <div class="math-row"><span>Halden / year</span><span>€10,680</span></div>
-              <div class="math-row total"><span>Hours back / month</span><span id="save-hours">18</span></div>
-              <a class="btn btn-primary" href="start.html" data-open-start data-intent="buy">Get Halden</a>
-            </aside>
-          </div>
         </div>
       </section>
 
