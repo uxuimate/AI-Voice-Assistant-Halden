@@ -235,11 +235,25 @@
     window.setTimeout(() => document.getElementById("m-name")?.focus(), 20);
   };
 
+  const resetModalForm = () => {
+    const form = document.getElementById("modal-form");
+    const wrap = document.getElementById("modal-form-wrap");
+    const success = document.getElementById("modal-success");
+    form?.reset();
+    form?.querySelectorAll(".field").forEach((field) => {
+      field.classList.remove("is-bad");
+      field.querySelector("input, textarea")?.classList.remove("is-invalid");
+    });
+    wrap?.removeAttribute("hidden");
+    success?.classList.remove("is-on");
+  };
+
   const closeModal = () => {
     if (!overlay) return;
     overlay.classList.remove("is-open");
     overlay.hidden = true;
     document.body.classList.remove("modal-lock");
+    resetModalForm();
   };
 
   openers.forEach((el) => el.addEventListener("click", openModal));

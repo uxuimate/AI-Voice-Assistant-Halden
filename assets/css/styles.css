@@ -373,16 +373,24 @@ p {
   justify-content: center;
   width: 42px;
   height: 42px;
+  padding: 0;
   border: 0;
   border-radius: 50%;
   background: var(--card);
   box-shadow: var(--neu-sm);
   color: var(--ink);
+  line-height: 0;
   cursor: pointer;
 }
 
 .theme-toggle:hover {
   box-shadow: var(--neu-press);
+}
+
+.theme-toggle svg,
+.menu-btn svg {
+  display: block;
+  flex-shrink: 0;
 }
 
 .theme-toggle .icon-sun {
@@ -403,12 +411,14 @@ html[data-theme="dark"] .theme-toggle .icon-sun {
   justify-content: center;
   width: 42px;
   height: 42px;
+  padding: 0;
   border: 0;
   border-radius: 50%;
   background: var(--card);
   box-shadow: var(--neu-sm);
   cursor: pointer;
   color: var(--ink);
+  line-height: 0;
 }
 
 .menu-btn:hover {
@@ -2103,12 +2113,14 @@ html[data-theme="dark"] .voice-chip:focus-visible {
 }
 
 .faq-q svg {
+  display: block;
   flex-shrink: 0;
   width: 28px;
   height: 28px;
   padding: 6px;
   border-radius: 50%;
   box-shadow: var(--neu-sm);
+  overflow: visible;
   transition: transform var(--ease), box-shadow var(--ease);
 }
 
@@ -2358,15 +2370,27 @@ html[data-theme="dark"] .voice-chip:focus-visible {
 }
 
 .modal-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   float: right;
   width: 2.3rem;
   height: 2.3rem;
+  padding: 0;
   border: 0;
   border-radius: 50%;
   background: var(--card);
   box-shadow: var(--neu-sm);
   cursor: pointer;
   color: var(--ink);
+  line-height: 0;
+}
+
+.modal-close svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
 }
 
 .form {
