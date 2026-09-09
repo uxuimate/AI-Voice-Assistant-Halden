@@ -213,6 +213,16 @@
     if (doneTitle) doneTitle.textContent = copy.doneTitle;
     if (doneLead) doneLead.textContent = copy.doneLead;
     if (intentField) intentField.value = modalCopy[intent] ? intent : "buy";
+    const isBuy = (modalCopy[intent] ? intent : "buy") === "buy";
+    overlay?.querySelectorAll("[data-buy-only]").forEach((el) => {
+      el.hidden = !isBuy;
+      el.style.display = isBuy ? "" : "none";
+      el.querySelectorAll("input, textarea").forEach((input) => {
+        input.disabled = !isBuy;
+        if (!isBuy) input.classList.remove("is-invalid");
+      });
+      el.classList.remove("is-bad");
+    });
   };
 
   const openModal = (event) => {
@@ -245,8 +255,14 @@
   const emailOk = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 
   const validateField = (field) => {
+    if (field.hidden) return true;
     const input = field.querySelector("input, textarea");
-    if (!input) return true;
+    if (!input || input.disabled) return true;
+    if (!input.hasAttribute("required") && !input.value.trim()) {
+      field.classList.remove("is-bad");
+      input.classList.remove("is-invalid");
+      return true;
+    }
     let ok = input.value.trim().length > 0;
     if (input.type === "email") ok = emailOk(input.value.trim());
     field.classList.toggle("is-bad", !ok);
@@ -296,6 +312,13 @@
     if (lead) lead.textContent = "No deck. We talk through the call you are afraid a machine would get wrong.";
     if (submit) submit.textContent = "Book the call";
     if (field) field.value = "walk";
+    document.querySelectorAll("[data-buy-only]").forEach((el) => {
+      el.hidden = true;
+      el.style.display = "none";
+      el.querySelectorAll("input, textarea").forEach((input) => {
+        input.disabled = true;
+      });
+    });
     document.title = "Book a short call — Halden";
     const switcher = document.getElementById("start-switch");
     if (switcher) switcher.innerHTML = 'Ready this afternoon? <a href="start.html">Get Halden</a>.';

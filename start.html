@@ -121,12 +121,16 @@
               <input class="input" id="practice" name="practice" type="text" autocomplete="organization" required />
               <span class="err">Add the business name.</span>
             </div>
+            <div class="field" data-buy-only>
+              <label for="locations">Number of locations</label>
+              <input class="input" id="locations" name="locations" type="text" inputmode="numeric" placeholder="e.g. 1" />
+            </div>
             <div class="field">
               <label for="email">Work email</label>
               <input class="input" id="email" name="email" type="email" autocomplete="email" required />
               <span class="err">Use a valid email.</span>
             </div>
-            <div class="field">
+            <div class="field" data-buy-only>
               <label for="phone">Phone</label>
               <input class="input" id="phone" name="phone" type="tel" autocomplete="tel" required />
               <span class="err">Add a number we can reach.</span>
@@ -137,6 +141,7 @@
               <span class="err">One sentence is enough.</span>
             </div>
             <button class="btn btn-primary" type="button" data-submit id="start-submit">Send — we’ll start this week</button>
+            <p class="hero-note" data-buy-only>No contract. Cancel any month.</p>
           </form>
           <div class="form-success" id="start-success">
             <h3>Received. We’ll be in touch today.</h3>
